@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block tetstyle %}
+<style>
+	@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+html {
+
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+	display: block;
+}
+audio, canvas, progress, video {
+	display: inline-block;
+	vertical-align: baseline;
+}
+audio:not([controls]) {
+	display: none;
+	height: 0;
+}
+
+a {
+	background-color: transparent;
+	text-decoration: none;
+}
+a:active, a:hover {
+	outline: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol{ margin:0px; padding:0px;}
+
+
+/***********************  TOP Bar ********************/
+.sidebar{ width:220px;  background-color:#000;transition: all 0.5s  ease-in-out; }
+.bg-defoult{background-color:#222;}
+.sidebar ul{ list-style:none; margin:0px; padding:0px; }
+.sidebar li a,.sidebar li a.collapsed.active{ display:block; padding:8px 12px; color:#fff;border-left:0px solid #dedede;  text-decoration:none}
+.sidebar li a.active{background-color:#000;border-left:5px solid #dedede; transition: all 0.5s  ease-in-out}
+.sidebar li a:hover{background-color:#000 !important;}
+.sidebar li a i{ padding-right:5px;}
+.sidebar ul li .sub-menu li a{ position:relative}
+.sidebar ul li .sub-menu li a:before{
+    font-family: FontAwesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.sidebar ul li .sub-menu li a:hover:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    background-color: #111;
+    height: 100%;
+}
+.sidebar ul li .sub-menu li a:hover{ background-color:#222; padding-left:20px; transition: all 0.5s  ease-in-out}
+.sub-menu{ border-left:5px solid #dedede;}
+	.sidebar li a .nav-label,.sidebar li a .nav-label+span{ transition: all 0.5s  ease-in-out}
+	
+
+	.sidebar.fliph li a .nav-label,.sidebar.fliph li a .nav-label+span{ display:none;transition: all 0.5s  ease-in-out}
+	.sidebar.fliph {
+    width: 42px;transition: all 0.5s  ease-in-out;
+   
+}
+	
+.sidebar.fliph li{ position:relative}
+.sidebar.fliph .sub-menu {
+    position: absolute;
+    left: 39px;
+    top: 0;
+    background-color: #222;
+    width: 150px;
+    z-index: 100;
+}
+</style>
+{% endblock%}
+
+{% block content %}
+
+<div class="row">  
+<div class="sidebar left col-sm-2">
+  <ul class="list-sidebar bg-defoult">
+   
+    <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> Dashboards </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+      <ul class="sub-menu collapse" id="dashboard">
+        <li class="active"><a href="#tab1">CSS3 Animation</a></li>
+        <li><a href="#">General</a></li>
+        <li><a href="#">Buttons</a></li>
+        <li><a href="#">Tabs & Accordions</a></li>
+        <li><a href="#">Typography</a></li>
+        <li><a href="#">FontAwesome</a></li>
+        <li><a href="#">Slider</a></li>
+        <li><a href="#">Panels</a></li>
+        <li><a href="#">Widgets</a></li>
+        <li><a href="#">Bootstrap Model</a></li>
+      </ul>
+    </li>
+    <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
+    <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">Graphs</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+      <ul class="sub-menu collapse" id="products">
+        <li class="active"><a href="#">CSS3 Animation</a></li>
+        <li><a href="#">General</a></li>
+        <li><a href="#">Buttons</a></li>
+        <li><a href="#">Tabs & Accordions</a></li>
+        <li><a href="#">Typography</a></li>
+        <li><a href="#">FontAwesome</a></li>
+        <li><a href="#">Slider</a></li>
+        <li><a href="#">Panels</a></li>
+        <li><a href="#">Widgets</a></li>
+        <li><a href="#">Bootstrap Model</a></li>
+      </ul>
+    </li>
+    <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Grid options</span></a> </li>
+    <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">Tables</span><span class="fa fa-chevron-left pull-right"></span></a>
+      <ul  class="sub-menu collapse" id="tables" >
+        <li><a href=""> Static Tables</a></li>
+        <li><a href=""> Data Tables</a></li>
+        <li><a href=""> Foo Tables</a></li>
+        <li><a href=""> jqGrid</a></li>
+      </ul>
+    </li>
+    <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">E-commerce</span><span class="fa fa-chevron-left pull-right"></span></a>
+      <ul  class="sub-menu collapse" id="e-commerce" >
+        <li><a href=""> Products grid</a></li>
+        <li><a href=""> Products list</a></li>
+        <li><a href="">Product edit</a></li>
+        <li><a href=""> Product detail</a></li>
+        <li><a href="">Cart</a></li>
+        <li><a href=""> Orders</a></li>
+        <li><a href=""> Credit Card form</a> </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="tab-content col-sm-10" style="padding-left: 20px; background-color: #1abc9c;">
+    <div class="tab-pane active text-style" id="tab1">
+        <h2> Union Public Service Commission(UPSC)</h2>
+        <p>UPSC Exam or the Civil Services Exam is conducted by the Union Public Service Commission (UPSC) which is India s central agency for recruiting civil servants. UPSC Exam is commonly addressed as the IAS Exam since IAS is one of the most aspirational and preferred jobs in the country. Every year lakhs of candidates vie for the country s top Civil Services posts by appearing for the UPSC CSE exam.
+        UPSC exam list includes Indian Engineering Service Exam, Indian Forest Service Exams, Combined Defense Service Exam, Indian Economic/Statistical Service Exam, Combined Medical Service Exam, The Geologists Exam, Stenographers Exam, Central Police Force Exam, NDA exam and SCRA exam besides the Civil Services Exam.
+        Civil Services exam or the IAS Exam is the most prestigious amongst all other exams and is the gateway to around 24 government services including IFS, IPS, IRS, IRPS and so on. Every year many Civil Services aspirants compete for close to 1000 vacancies, making it one of the toughest papers to crack. The exact number of vacancies is notified by the UPSC. According to the Civil Services Exam,2018 notification, this year there are close to 782 posts that are advertised.
+         </p>
+        <p><a class="btn btn-success" href="http://www.upsc.gov.in/" target="_blank" role="button">View details »</a></p>
+         <hr>
+    </div>
+    
+ </div>
+</div>
+
+
+<script>
+
+	
+	$(document).ready(function(){
+   $('button').click(function(){
+       $('.sidebar').toggleClass('fliph');
+   });  
+});
+
+</script>
+{% endblock %}	
+
+
+
