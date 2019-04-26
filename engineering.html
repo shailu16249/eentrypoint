@@ -1,0 +1,391 @@
+{% extends 'base.html' %}
+
+{% block tetstyle %}
+<style>
+  @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+html {
+
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%
+}
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
+  display: block;
+}
+audio, canvas, progress, video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+a {
+  background-color: transparent;
+  text-decoration: none;
+}
+a:active, a:hover {
+  outline: 0;
+}
+
+h1,h2,h3,h4,h5,h6,p,ul,ol{ margin:0px; padding:0px;}
+
+
+/***********************  TOP Bar ********************/
+.sidebar{ width:220px;  background-color:#000;transition: all 0.5s  ease-in-out; }
+.bg-defoult{background-color:#222;}
+.sidebar ul{ list-style:none; margin:0px; padding:0px; }
+.sidebar li a,.sidebar li a.collapsed.active{ display:block; padding:8px 12px; color:#fff;border-left:0px solid #dedede;  text-decoration:none}
+.sidebar li a.active{background-color:#000;border-left:5px solid #dedede; transition: all 0.5s  ease-in-out}
+.sidebar li a:hover{background-color:#000 !important;}
+.sidebar li a i{ padding-right:5px;}
+.sidebar ul li .sub-menu li a{ position:relative}
+.sidebar ul li .sub-menu li a:before{
+    font-family: FontAwesome;
+    content: "\f105";
+    display: inline-block;
+    padding-left: 0px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.sidebar ul li .sub-menu li a:hover:after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 0;
+    width: 5px;
+    background-color: #111;
+    height: 100%;
+}
+.sidebar ul li .sub-menu li a:hover{ background-color:#222; padding-left:20px; transition: all 0.5s  ease-in-out}
+.sub-menu{ border-left:5px solid #dedede;}
+  .sidebar li a .nav-label,.sidebar li a .nav-label+span{ transition: all 0.5s  ease-in-out}
+  
+
+  .sidebar.fliph li a .nav-label,.sidebar.fliph li a .nav-label+span{ display:none;transition: all 0.5s  ease-in-out}
+  .sidebar.fliph {
+    width: 42px;transition: all 0.5s  ease-in-out;
+   
+}
+  
+.sidebar.fliph li{ position:relative}
+.sidebar.fliph .sub-menu {
+    position: absolute;
+    left: 39px;
+    top: 0;
+    background-color: #222;
+    width: 150px;
+    z-index: 100;
+}
+
+.nav-sidebar { 
+    width: 100%;
+    padding: 30px 0; 
+    
+}
+.nav-sidebar a {
+    color: #333;
+    -webkit-transition: all 0.08s linear;
+    -moz-transition: all 0.08s linear;
+    -o-transition: all 0.08s linear;
+    transition: all 0.08s linear;
+}
+.nav-sidebar .active a { 
+    cursor: default;
+    background-color: #0b56a8; 
+    color: #fff; 
+}
+.nav-sidebar a:hover {
+    background-color: #E50000;   
+}
+.nav-sidebar .text-overflow a,
+.nav-sidebar .text-overflow .media-body {
+    white-space: nowrap;
+    
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis; 
+}
+
+</style>
+{% endblock%}
+
+{% block content %}
+
+<div class="row">  
+<div class="sidebar left col-sm-2">
+  <nav class="nav-sidebar">
+  <ul class="list-sidebar bg-defoult">
+    
+    <li> <a href="#" data-toggle="collapse" data-target="#dashboard" class="collapsed active" > <i class="fa fa-th-large"></i> <span class="nav-label"> MATHEMATICS </span> <span class="fa fa-chevron-left pull-right"></span> </a>
+      <ul class="sub-menu collapse" id="dashboard">
+        <li class="active"><a href="#tab1"  data-toggle="tab">Algebra</a></li>
+        <li><a href="#tab2"  data-toggle="tab">Calculus</a></li>
+        <li><a href="#tab3"  data-toggle="tab">Geometry</a></li>
+        <li><a href="#tab4"  data-toggle="tab">Linear Algebra</a></li>
+        <li><a href="#tab5"  data-toggle="tab">Logic</a></li>
+        <li><a href="#tab6"  data-toggle="tab">Probability</a></li>
+        <li><a href="#tab7"  data-toggle="tab">Statistics</a></li>
+        <li><a href="#tab8"  data-toggle="tab">Regression </a></li>
+      </ul>
+    </li>
+   
+    <li> <a href="#" data-toggle="collapse" data-target="#products" class="collapsed active" > <i class="fa fa-bar-chart-o"></i> <span class="nav-label">PHYICS</span> <span class="fa fa-chevron-left pull-right"></span> </a>
+      <ul class="sub-menu collapse" id="products">
+        <li class="active"><a href="#">CSS3 Animation</a></li>
+        <li><a href="#">General</a></li>
+        <li><a href="#">Buttons</a></li>
+        <li><a href="#">Tabs & Accordions</a></li>
+        <li><a href="#">Typography</a></li>
+        <li><a href="#">FontAwesome</a></li>
+        <li><a href="#">Slider</a></li>
+        <li><a href="#">Panels</a></li>
+        <li><a href="#">Widgets</a></li>
+        <li><a href="#">Bootstrap Model</a></li>
+      </ul>
+    </li>
+   
+    <li> <a href="#" data-toggle="collapse" data-target="#tables" class="collapsed active" ><i class="fa fa-table"></i> <span class="nav-label">CHEMISTRY</span><span class="fa fa-chevron-left pull-right"></span></a>
+      <ul  class="sub-menu collapse" id="tables" >
+        <li><a href=""> Static Tables</a></li>
+        <li><a href=""> Data Tables</a></li>
+        <li><a href=""> Foo Tables</a></li>
+        <li><a href=""> jqGrid</a></li>
+      </ul>
+    </li>
+    <li> <a href="#" data-toggle="collapse" data-target="#e-commerce" class="collapsed active" ><i class="fa fa-shopping-cart"></i> <span class="nav-label">PAPERS</span><span class="fa fa-chevron-left pull-right"></span></a>
+      <ul  class="sub-menu collapse" id="e-commerce" >
+        <li><a href=""> Products grid</a></li>
+        <li><a href=""> Products list</a></li>
+        <li><a href="">Product edit</a></li>
+        <li><a href=""> Product detail</a></li>
+        <li><a href="">Cart</a></li>
+        <li><a href=""> Orders</a></li>
+        <li><a href=""> Credit Card form</a> </li>
+      </ul>
+    </li>
+     <li> <a href="#"><i class="fa fa-diamond"></i> <span class="nav-label">Layouts</span></a> </li>
+      <li> <a href="#"><i class="fa fa-laptop"></i> <span class="nav-label">Tips</span></a> </li>
+  </ul>
+</nav>
+</div>
+
+<div class="tab-content col-sm-10" style="padding-left: 20px;">
+<div class="tab-pane active text-style" id="tab1">
+  <br>
+  <h3>What is Algebra?</h3> <br>
+       <p>
+         Algebra is an area of mathematics that uses symbols to represent numbers in formulas and equations. Understanding these symbols and how they work together and provide structure to equations allows mathematicians to more efficiently write formulas and solve math problems. Algebra is divided into two parts: elementary algebra and abstract algebra. Elementary algebra consists of the basic algebra symbols and equations taught in primary school. Abstract algebra, or modern algebra, includes the study of algebraic structures such as vector spaces and groups.
+       </p>
+ <br>
+  <h3>Online Algebra Courses and Programs</h3> <br>
+        <p>
+      EdX offers both introductory and advanced algebra courses. Get started solving equations and learning algebraic expression basics with the free online course from SchoolYourself. The self-paced algebra course will teach you how to work with integers, decimals and fractions, how to evaluate powers and roots and how to solve single and multi-variable equations and inequalities with online quizzes and algebra worksheets. Algebra is essential for both high school and college math curriculums and this will serve as a pre-algebra course. Working through these algebra problems will get you well-prepared for further math study.
+           <br>
+      For a more advanced algebra program, consider the College Algebra and Problem Solving course from ASU. This self-paced course uses the ALEKS learning system which helps to tailor the learning experience to the students personalized needs and pace. Learn how to apply algebra to a wide range of real-world problems and study critical algebraic concepts like functions, domains and ranges. This course can help you prepare for calculus and other math courses.
+          <br>
+      Explore additional online math courses and tutorials that cover Boolean algebra, algebraic geometry, abstract algebra and other advanced topics. Many courses are self-paced so you can enroll and learn on your own schedule.
+      </p> <br>
+        <h3>What Types of Jobs use Algebra?</h3> <br>
+        <p>
+      Algebra is a skill that is applicable in many types of fields and professions in today’s economy. You may be surprised by the number of jobs and occupations that require a working knowledge of algebra to complete day to day requirements. Below are a few examples of professions that require algebra skills and what could be common tasks.
+       <br>
+      Business professionals who use algebra on a daily basis would be accountants. As an accountant, you need to be able to balance spreadsheets, forecast costs, and create spending reports for your company and team. Another example of business professionals who need a working knowledge of algebra includes bankers. Bankers need to be able to calculate interest rates, taxes, and more for their customers on a frequent basis. Business owners also use algebra to calculate run rates, revenue, the margin of profitability, and so much more for their shareholders to showcase growth potential and secure financing and investment.
+          <br>
+        Medical professionals need to know and understand algebra to administer drugs, detect pattern irregularities, fill prescriptions and more for their patients. Converting different drug doses is relatively common in the medical field, so having algebra solving problem skills will regularly come in handy. Especially when the time is at a crunch and equipment is space, you will need to know how to prescribe different medicine by factoring in weight, age, dosage, and more for your patients.
+         <br>
+        Fitness instructors demonstrate proper exercise techniques to their clients. A working level of algebra helps fitness instructors calculate the ideal workout for their clients. Fitness instructors calculate a person’s body fat percentage, height, weight, age, and more to design the proper workout regime. Fitness instructors may use algebra to determine the ratio of dieting and exercise to meet their client’s goals via weight gain and or weight loss.<br>
+
+        Architectures are professionals who design and draw models of new buildings. Precision and algebra are essential for these professionals to get the details correct. Depicting a building’s height, the width of rooms, hallways, floors, and more all come back to a working understanding of algebra problems and solutions.<br>
+
+        Civil Engineering professionals design, inspect, and maintain common systems we use daily. Some of these systems include roads, bridges, tunnels, sewer systems, and so much more. As a civil engineer, you need to understand algebra so you can calculate how much weight a bridge and or road can handle when factoring in stress from vehicles. Another factor that civil engineers need to consider includes predicting how a bridge would be able to withstand wind speeds, earthquakes, snow, and so much more.
+        </p> <br>
+           <h3>Why Take Algebra Courses Online?</h3> <br>
+           <p>
+        Algebra is a practical skill to have for many different professionals in their line for work. Taking algebra courses online allows you to choose the right course that best suits your needs. Maybe you want a refresher course to brush up on your skills. Perhaps you are looking for more advanced algebra classes if you’re going to become an architect and need to practice algebra advanced techniques. Regardless of where you fall, edX offers a wide range of online algebra courses designed to fit your busy schedule.
+        </p> <br>
+     </div>
+    <div class="tab-pane active text-style" id="tab2">
+             <br>
+        <h3> What is Calculus?</h3><br>
+        <p>
+        Calculus is an area of mathematics that studies rates of change (differential calculus) and areas around curves (integral calculus). Calculus has broad applications in physics and other disciplines.
+         </p><br>
+        <h3>Online Calculus Courses and Programs</h3><br>
+        <p>
+        Get an introduction to calculus with online courses from major universities and institutions worldwide including Harvard, MIT and TU Delft. Edx offers basic calculus courses and advanced programs designed to help you learn calculus in an engaging and effective online learning environment complete with video tutorials, calculus problems, quizzes and more.<br>
+
+        Additionally, students can earn verified certificates in calculus and other mathematics disciplines from edX and the university offering the course, proof for teachers, employers and others of successful completion of the coursework. Get started learning calculus with one the following courses or programs.<br>
+
+        Are you new to the study of calculus and want an introductory course that will help you understand the basics? Arizona State University offers a Precalculus course designed for you. This self-paced course covers the basics of linear, exponential, logarithmic, polynomial, rational and trigonometric functions and will prepare you for college-level calculus courses. Work through calculus practice problems to apply your skills and further your learning.<br>
+
+        If you are ready for advanced calculus, check out Calculus Applied! from Harvard University. This exciting course will teach you how to apply the tools of calculus to real-world analysis. Through a series of case studies, you will look at how test makers use calculus functions to analyze test questions, how economists model price and demand using rates of change and much more. See calculus come to life with real practitioners guiding you along the way. The course is free to audit or students can pursue a certificate for a small fee.
+      </p><br>
+    </div>
+    <div class="tab-pane active text-style" id="tab3">
+        <br>    
+        <h3> What is Geometry?</h3>  <br> 
+        <p>
+      Geometry is the area of mathematics that studies lines, planes, angles, shapes and the distances and relationships between them. Examples include calculating the angles of a triangle, the length of a curve or the surface of a sphere.
+        </p>  <br> 
+     <h3> Online Geometry Courses and Programs</h3>  <br> 
+     <p>
+      Take free geometry courses online to learn new skills and enhance classroom learning. The 14-week basic geometry course from School Yourself can be taken alongside a high school course and can act as an in-depth geometry tutorial for added practice and mastery. Learn all of the geometry basics including how to calculate areas of complex shapes, how to measure angles, how to prove and apply the Pythagorean theorem, how to apply properties of triangles and quadrilaterals and how to apply geometry formulas. The course is self-paced so students can jump to any section as needed.<br>
+
+      Ready for something a little more advanced? Computational Geometry is a free online course from Tsinghua University that can help prepare you for advanced study of robotics, computer-aided design (CAM and CID), and geographical information systems (GIS). Learn geometric algorithms and structures as well as fundamental strategies for solving geometric problems.
+       </p>  <br> 
+      <h3>What Types of Jobs use Geometry?</h3>  <br> 
+      <p>
+      Geometry is in many types of fields and professions in the market today. You may be surprised by the number of jobs and occupations that require a working knowledge of geometry to complete day to day requirements. Below are a few examples of professions that require an understanding of geometry to complete daily tasks.<br>
+
+      Computer graphic designers need to know and understand geometry to create realistic three-dimensional space images. Some examples of graphic designers include video game creators and animators. Understanding how to use and manipulate shapes makes computing designs easier for computers, so geometry is necessary for daily tasks as a graphic designer.<br>
+
+      Robotic engineers need to understand geometry to accomplish difficult tasks in their line of work. Understanding what angles to use for a range of motion by a robot is a common task for these professionals. Having the ability to control these robots down to the smallest movement is all pre-determined by arcs and angles. Some robots are built with a range of vision to detect objects, so measuring out angles and perception are everyday tasks within this profession.<br>
+
+      Medical professionals use geometry to help create a 3D model of medical issues like tumors in patients. Taking a result from a CAT scan and properly scaling a 3D model of that tumor can give doctors and surgeons the insight they will need to address this issue directly for their patient. Medical imaging with VR headsets like Microsoft HoloLens will allow doctors in the future to reconstruct organs, bones, and anything else within the human body using geometry to put all of the pieces together accurately.
+           <br>
+      Astronomers use geometry when pairing different stars and constellations together via mapping. Understanding how far different stars and constellations are from each other is a common practice by using 3D geometry.<br>
+
+      Jewelers use geometry to make the perfect cut for their customers. Specific geometric patterns need to be followed by this skilled professionals to produce the ideal shape. Understanding where to cut and slice a diamond is all achieved by a deep level of geometry.<br>
+
+      Fashion designers use geometry on a daily basis to design the perfect look for their customers. Measuring clothing based on body type and angles can make or break a particular look and feel for someone. As a fashion designer, you will need to know how to take 3D shapes and create patterns for your clients.<br>
+
+      A car designer uses their skills in geometry on a frequent basis. One example comes down to competitive racing where the design of a car can be the difference of finishing first or second in a race. Designing a 3D model of a vehicle that factors in weight, angles, wind resistance, and more is accomplished with geometry.<br>
+
+      Constructor workers use geometry on a regular basis when designing a house or building. Understanding geometric construction angles, shape strength, line segments, surface area, and aesthetic look are all working components for contractor workers to consider. Being able to redesign a look and feel of a building or house using geometry is more common than you may have realized.
+         </p>  <br> 
+      <h3>Why Study Geometry Online?</h3>  <br> 
+      <p>
+      Geometry is a common skill to have for many different professionals in their line of work. Enrolling in geometry courses online allows you to choose the right course that best suits your needs. Perhaps you want a basic geometry course to brush up on your skills if it has been a while since your last class. Maybe you are looking for more advanced courses if you want to become an architect and need to practice geometry advanced techniques. Regardless of where you fall, edX offers a wide range of online geometry courses designed to fit your busy schedule.<br>
+
+      Some of our courses will cover the understanding of parallel lines, the Pythagorean theorem, right triangles, conic sections, tangent circles, regular polygons, Heron’s formula, congruent angles, geometric curves, arc lengths, geometric concepts, supplementary angles, rhombus measuring, isosceles triangles, dimensional objects interior angles, geometric figures, and more. Learning how to solve geometry problems by using deductive reasoning and other types of strategies will be vital to having success. If you are looking for geometry help or geometry problem solving courses, you’ve come to the right place.
+    </p>  <br> 
+   </div>
+    <div class="tab-pane active text-style" id="tab4">
+         <br>     
+          <h3>What is Linear Algebra?</h3><br>
+          <p>
+          Linear algebra is an area of mathematics that studies lines, planes and vectors and the areas and spaces they create. Linear algebra and its applications can be found in engineering, physics, computer animation and many other disciplines.
+          </p><br>
+
+          <h3>Online Linear Algebra Courses and Programs</h3>
+          <p>
+          Get an introduction to linear algebra with online courses from major universities and institutions. Edx offers beginner and advanced courses designed to help you learn about linear algebra in an engaging and effective online learning environment complete with video tutorials, quizzes and more.<br>
+
+          Additionally, students can earn verified certificates in linear algebra and other mathematics disciplines from edX and the university offering the course, proof for teachers, employers and others of successful completion of the coursework. Get started in linear algebra with one the following courses or programs.
+                <br>
+          Davidson College offers an exciting, 2-part linear algebra program that uses fun practice problems to teach the fundamental concepts and techniques. Apply linear algebra in data mining as well as computer animation while learning how to perform mathematical operations on matrices and solve linear equations. Learn how linear algebra is used in sports ranking, web search applications, image compression and more.
+        </p><br>
+    </div>
+     <div class="tab-pane active text-style" id="tab5"><br>    
+         <h3>What is logic?</h3><br>
+         <p>
+          Logic is the scientific study of reasoning. Logic is used in math and science to test hypotheses, solve problems, prove theorems and draw conclusions from observations.<br>
+
+          Two key forms of logical reasoning are deductive and inductive. Deductive reasoning starts with a general premise that, if true, will result in logical conclusions that are also true. Inductive reasoning, on the other hand, draws general statements from a more specific premise. Even if the premise is true, conclusions drawn from it can be false.
+               </p><br>
+          <h3>Online Logic Courses and Programs</h3><br>
+          <p>
+          Logical thinking, while important in almost any field, is fundamental in the world of programming. Logic is used consistently in the development of computer software and understanding the basics of logic and the construction of arguments is key to writing successful code. Logic and Computational Thinking is a free online course from Microsoft that will give you and introduction to logic, critical thinking and analytical reasoning. Learn how to break down complex problems into a series of simpler tasks, how to recognize patterns, how to employ algorithms to solve problems and how to build deductive and inductive arguments. The 4-week course is part of Microsoft’s professional certificate program in computer science.
+            <br>
+          Find additional critical thinking courses from Fullbridge, RIT, The University of Adelaide, The University of Queensland and other top schools around the world. Developing your logic and critical thinking skills can help you in business management, data science, statistics, finance and many other areas of study. Enroll now to challenge your mind and build a strong foundation for all of your future learning and development.
+        </p><br>
+              </div>
+     <div class="tab-pane active text-style" id="tab6">
+          <br>    
+          <h3>What is Probability?</h3> <br>
+          <p>
+          Probability, or probability theory in application to mathematics, is the measurement of the possibility of a particular outcome. Mathematicians, data scientists, statisticians and others apply probability theory when analyzing data sets to make predictions or forecasts.
+                </p> <br>
+          <h3>Online Probability Courses and Programs</h3>
+           <br>
+           <p>
+          Get an introduction to probability with online courses from major universities and institutions including Purdue, MIT, Microsoft and more. Edx offers both individual courses and advanced programs designed to help you learn about probability in an engaging and effective online learning environment complete with video tutorials, quizzes and more.
+            <br>
+          Additionally, students can earn verified certificates in probability and other mathematics disciplines from edX and the university offering the course, proof for teachers, employers and others of successful completion of the coursework. Get started learning about probability and statistics with one the following courses or programs.
+             <br>
+          Purdue University offers two self-paced probability courses that will introduce you to the field and prepare you for further study of statistics and data science. Probability: Basic Concepts & Discrete Random Variables is a 6-week free online course that covers basic probability formulas, concepts and rules, probability models with discrete random variables and probability models in real-world practice. The second course goes into the most frequently used probability distribution models including exponential distribution, Gamma distribution and normal probability distribution.
+               <br>
+          Introduction to Probability: Part 1 - The Fundamentals from MIT covers the basics of probability models and will explore random variables, distributions, means and variances. Part 2 of this course introduces inference methods, laws and applications of large numbers as well as random processes. Both courses are free to audit and students can pursue a certificate for a small fee.
+        </p>
+         <br>
+    </div>
+     <div class="tab-pane active text-style" id="tab7"> <br>    
+         <h3> What is Statistics?</h3><br>
+         <p>
+          Statistics is an area of mathematics that deals with the study of data. Data sets can include population data, survey results, data collected from experiments and much more. Various statistical models can be applied in order to analyze and interpret the results of a set of data or to find relationships between different data sets.
+             </p><br>
+          <h3>Online Statistics Courses and Programs</h3><br>
+          <p>
+          Get an introduction to statistics with online courses from major universities and institutions worldwide. Edx offers both individual courses and advanced programs designed to help you learn about statistics in an engaging and effective online learning environment complete with video tutorials, quizzes and more.
+               <br>
+          Additionally, students can earn verified certificates in statistics and other mathematics disciplines from edX and the university offering the course, proof for teachers, employers and others of successful completion of the coursework. Get started in statistics with one the following courses or programs.
+               <br>
+          Harvard University offers a free statistics course that will introduce you to the fundamental concepts and tools for analyzing data. Learn the basics of statistics including how to compute p-values and confidence intervals using R programming and gain an understanding of random variables, distributions, non-parametric statistics and more. The 4-week, self-paced course is free to audit and offers a verified certificate option for a small fee.
+                    <br>
+          Columbia University has a 5-week online statistics course, Statistical Thinking for Data Science and Analytics, which will teach the core concepts needed for further study of data science. Learn how to use Bayesian modeling and inference for forecasting as well as fundamentals of data collection and analysis. The course is part of the Data Science for Executives Professional Certificate program.
+             </p><br>
+
+    </div>
+     <div class="tab-pane active text-style" id="tab8">
+        <br>
+         <h3>What is Regression?</h3><br>
+         <p>
+          Regression, in relation to data analysis and statistics, is a process for analyzing the relationship between dependent and independent variables. Regression analysis models are used to predict the impact on the dependent variable of various changes in the independent variables. Types of regression include simple regression, multiple regression, linear regression, multivariate regression, polynomial regression and logistic regression.
+         </p><br>
+          <h3>Online Regression Courses and Programs</h3><br>
+          <p>
+          Get an introduction to regression analysis with online courses from major universities and institutions worldwide. Edx offers both individual courses and advanced programs designed to help you learn regression model analysis and testing in an engaging and effective online learning environment complete with video tutorials, quizzes and more.
+                       <br>
+          Additionally, students can earn verified certificates in regression and other mathematics disciplines from edX and the university offering the course, proof for teachers, employers and others of successful completion of the coursework. Get started in regression analysis with one the following courses or programs.
+                   <br>
+          Georgia Tech offers an excellent introductory course, Statistical Modeling and Regression Analysis, that covers the basics of linear regression, generalized linear regression and multiple linear regression. Students will use R software to implement statistical regression models on real data sets and gain fundamental skills for interpreting results. The 14-week course is free to audit and also offers a verified certificate option for a small fee.
+                           <br>
+          Regression analysis plays a big role in machine learning as it helps software extract statistically relevant patterns from collected data. In Robotics: Vision Intelligence and Machine Learning, a self-paced online course from the University of Pennsylvania, students will understand how data classification, regression and clustering helps machines learn from and respond to new environments. This course is part of an advanced MicroMasters program in Robotics.
+             </p><br>
+
+    </div>
+
+ <div class="tab-pane text-style" id="sky4">
+        <h1>JEEMAIN</h1>
+        <p>Every individual wants to receive the best of education to achieve his or her dreams. However, the more the institution is good, the higher the fees they charge. Students usually leave their education incomplete and do blue collar jobs to meet their basic ends. In the age of internet, do we really need to spend huge amount on getting degrees? One can equally quench his third for knowledge by joining online classes. Online classes are not only cheap but also conveniently arranged for those who are working. This website provides free online courses or have resourceful material for students.
+         </p>
+        <p><a class="btn btn-success" href="https://jeemain.nic.in/webinfo/Public/Home.aspx" role="button">View details »</a></p>
+
+        <h2>JEE(Advanced)</h2>
+       <p>Indian Institutes of Technology (IITs) are institutions of national importanceestablished through Acts of Parliament for fostering excellence in education. Overthe years, IITs have created a world class educational platform that is dynamicallysustained through quality teaching and internationally acclaimed research withexcellent infrastructure and the best available minds. At present,there are twenty three IITs across the country.
+         </p>
+        <p><a class="btn btn-success" href="https://jeeadv.nic.in/jeeadvapp/Root/Loginpage.aspx"  role="button">View details »</a></p>
+
+         <h2>AKTU-UPSEE</h2>
+         <p>The entrance examination for degree level engineering institutions and other professional colleges has been assigned to Dr A.P.J. Abdul Kalam Technical University Uttar Pradesh, Lucknow vide Govt. order no. 4299/सोलह-1-2017-14(54)/2012 dated 06-12-2017. The Govt. of Uttar Pradesh, Technical Education Department, has consented for the constitution of Central Admission Board (CAB) under the Chairmanship of the Vice Chancellor, Dr A.P.J. Abdul Kalam Technical University Uttar Pradesh, Lucknow to supervise and control the State Entrance Examination herein after referred as UPSEE-2018 being conducted by Dr A.P.J. Abdul Kalam Technical University Uttar Pradesh, Lucknow vide Govt. order no. 05/सोलह-1-2017-14(54)/2012 dated 16-01-2018.
+         </p>
+        <p><a class="btn btn-success" href="https://aktu.ac.in/" target="_blank" role="button">AKTU»</a>
+        <a class="btn btn-success" href="https://upsee.nic.in/publicinfo/public/home.aspx" role="button">UPSEE »</a></p>
+
+      </div>
+
+</div>
+</div>
+
+
+<script>
+
+  
+  $(document).ready(function(){
+   $('button').click(function(){
+       $('.sidebar').toggleClass('fliph');
+   });  
+});
+
+</script>
+{% endblock %}  
+
+

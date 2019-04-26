@@ -1,0 +1,374 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block styles %}
+<style>
+  .jumbotron {
+	text-align: center;
+  }	
+
+
+#team {
+    background: #eee !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #108d6f;
+    border-color: #108d6f;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007b5e;
+    border-color: #007b5e;
+}
+
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+    background: #ffffff;
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem;
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+}
+
+.backside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card,
+.backside .card {
+    min-height: 312px;
+}
+
+.backside .card a {
+    font-size: 18px;
+    color: #007b5e !important;
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+    color: #007b5e !important;
+}
+
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+        .footer {color:#ccc;}
+         .hr-h3s {
+          border: 3px solid #E94B3C;
+          width: 70px;
+          margin: 0 auto 35px auto;
+        }
+
+       #responsive{
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+       } 
+       #responsive iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+       }
+
+
+</style>
+{% endblock %}  
+
+
+{% block jumbotron %}
+
+  <div class="jumbotron text-white rounded bg-dark">
+    
+      <h1 class="display-4 font-italic">An investment in knowledge pays the best interest</h1>
+      <p class="lead my-3">Education is not just to read and write. It is about using education for their own advantages and to utilize the knowledge for their growth.</p>
+      <p class="lead mb-0"><a href="https://content.wisestep.com/education-important-top-reasons/" class="text-white font-weight-bold">Continue reading...</a></p>
+    
+  </div><!-- /.container -->
+{% endblock %}  
+
+
+
+{% block content %}
+
+<div class="container-fluid gedf-wrapper">
+  <div class="row">
+          
+      <div class="col-md-6 gedf-main">
+        <h2>Home</h2>
+        <p>Every individual wants to receive the best of education to achieve his or her dreams. However, the more the institution is good, the higher the fees they charge. Students usually leave their education incomplete and do blue collar jobs to meet their basic ends. In the age of internet, do we really need to spend huge amount on getting degrees? One can equally quench his third for knowledge by joining online classes. Online classes are not only cheap but also conveniently arranged for those who are working. This website provides free online courses or have resourceful material for students.
+         </p>
+        <p><a class="btn btn-secondary" href="https://www.dtelepathy.com/blog/inspiration/learn-a-thing-or-two-30-education-sites-done-right" role="button">View details »</a></p>
+      </div>
+
+    <div class="col-md-6">
+        <a href="#"><img src="{% static 'img/e.jpg' %}" width="600" height="400" class='img-responsive'/></a>
+    </div>
+    
+   
+  </div>
+</div>
+{% endblock %}
+
+{% block overlay %}  
+        
+
+<section id="team" class="pb-5">
+    <div class="container">
+        <h5 class="section-title h1" id="Team">OUR TEAM</h5>
+        <div class="row">
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static "img/2.jpg" %}" alt="card image"></p>
+                                    <h4 class="card-title">Shailendra</h4>
+                                    <p class="card-text">Founder & Instructor </p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Shailendra</h4>
+                                    <p class="card-text">Shailendra pursuing graduation in computer science & engineering from KNIT. He is a perfectionist who loves teaching. Her data analytics research work has been published in prestigious conferences.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/profile.php?id=100012171346364">
+                                                <span class="fa fa-facebook"></span> 
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/skumaryadava">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static "img/3.jpg" %}" alt="card image"></p>
+                                    <h4 class="card-title">Sudhir</h4>
+                                    <p class="card-text">Tech Lead & Instructor</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Sudhir</h4>
+                                    <p class="card-text">Sudhir is a CS graduate and a die-hard programmer. He literally 'Lives to Code'. He is a development member and an instructor at eEntrypoint.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/profile.php?id=100012171346364">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/skumaryadava">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="{% static "img/1.jpg" %}" alt="card image"></p>
+                                    <h4 class="card-title">Shailu</h4>
+                                    <p class="card-text">Content Developer</p>
+                                    <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Shailu</h4>
+                                    <p class="card-text">He is pursuing Bachelor's degree in Compute science & engineering. He has a keen interest in education and technology. He works tirelessly for the student support and works closely with teaching assistants to improve the student experience.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://www.facebook.com/profile.php?id=100012171346364">
+                                                <i class="fa fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="https://twitter.com/skumaryadava">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fa fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+
+  {% block footer %}
+<hr>
+  <div class="footer bg-dark pt-5 pb-3">
+    <div class="container pt-4">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <h3>Say hello sky955406@gmail.com<h3>
+                <ul class="list-unstyled">
+                    
+                <li class="list-inline-item"><a href="{% url 'home' %}"> Home</a></li>
+                <li class="list-inline-item"><a href="#"> About us</a></li>
+                <li class="list-inline-item"><a href="#"> Privacy</a></li>
+                <li class="list-inline-item"><a href="#"> Terms & Conditions</a></li>
+                <li class="list-inline-item"><a href="{% url 'contact' %}"> Contact us</a></li>
+            </ul>
+            <p style="color: red">Powered by :  SkyDream - remium WordPress Theme</p>
+            </div>
+            
+        </div>
+    </div>
+</div>
+{% endblock %}
